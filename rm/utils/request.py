@@ -3,7 +3,7 @@
 import json
 import requests
 from typing import Union
-from rm import RMSDKAPIException
+from rm.exceptions import RMSDKAPIException, RMSDKException
 
 class Request(object):
 
@@ -31,6 +31,9 @@ class Request(object):
 
     def makeRequest(self, method=None, url=None, data=None, headers=None, params=None):
         try:
+            if data is not None and not json.loads(data):
+                raise RMSDKException("Payload data cannot be empty")
+
             response = self.session.request(
                 method=method,
                 url=url,
