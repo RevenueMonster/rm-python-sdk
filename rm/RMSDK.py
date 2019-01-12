@@ -2,6 +2,7 @@
 
 from rm import (
     Auth,
+    Loyalty,
     Merchant,
     QuickPay, 
     Store,
@@ -21,6 +22,7 @@ class RMSDK(object):
             if not k.startswith("_") and k != "defaults":
                 setattr(self, k, v)
         
+        self.loyalty = Loyalty(configs)
         self.merchant = Merchant(configs)
         self.quickPay = QuickPay(configs)
         self.store = Store(configs)
