@@ -9,3 +9,5 @@ __pycache__/
 # vscode
 .vscode
 *.pem
+
+.DS_Store
