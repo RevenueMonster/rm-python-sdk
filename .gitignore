@@ -11,3 +11,8 @@ __pycache__/
 *.pem
 
 .DS_Store
+
+# build files
+build
+dist
+*.egg-info
