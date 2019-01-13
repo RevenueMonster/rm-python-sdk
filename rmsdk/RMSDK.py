@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from rm import (
+from rmsdk import (
     Auth,
     Loyalty,
     Merchant,

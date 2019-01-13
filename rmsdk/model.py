@@ -3,7 +3,7 @@
 import json
 import requests
 from time import time
-from rm.utils import generateSignature, getNonce, orderDict
+from .utils import generateSignature, getNonce, orderDict
 
 class RMSDKModel(object):
     """The base RM SDK Model all other models will inherit.

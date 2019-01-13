@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-from rm import RMSDKModel
-from rm.utils import Request
+from .model import RMSDKModel
+from .request import Request
 
 class Loyalty(RMSDKModel):
 

@@ -3,7 +3,7 @@
 import json
 import requests
 from typing import Union
-from rm.exceptions import RMSDKAPIException, RMSDKException
+from .exceptions import RMSDKAPIException, RMSDKException
 
 class Request(object):
 

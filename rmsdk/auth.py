@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
 import json
-from rm import RMSDKModel
-from rm.utils import getB64String, Request
-from rm.exceptions import RMSDKException
+from .model import RMSDKModel
+from .utils import getB64String
+from .request import Request
+from .exceptions import RMSDKException
 
 check_keys = ["clientID", "clientSecret", "privateKey"]
 
