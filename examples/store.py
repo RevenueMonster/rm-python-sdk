@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import rm
+from rmsdk import RMSDK
 from configs import configs
 
 create_store_payload_valid = {
@@ -26,7 +26,7 @@ create_store_payload_invalid = {
     "phoneNumber": "377334080"
 }
 
-client = rm.RMSDK(configs=configs)
+client = RMSDK(configs=configs)
 accessToken, store = client.accessToken, client.store
 
 # print(store.getStores(accessToken))

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import rm
+from rmsdk import RMSDK
 from configs import configs
 
 create_transaction_payload = {
@@ -21,7 +21,7 @@ create_transaction_payload = {
 }
 
 # client_credentials
-client = rm.RMSDK(configs=configs)
+client = RMSDK(configs=configs)
 accessToken, pay = client.accessToken, client.transaction
 
 print(pay.createTransaction(accessToken, data=create_transaction_payload)) 

@@ -1,4 +1,6 @@
-from rm.utils import generateSignature
+#!/usr/bin/python3
+
+from rmsdk.utils import generateSignature
 
 data = {
     "name": "REVENUE MONSTER",
@@ -34,6 +36,6 @@ signature = generateSignature(
                 requestUrl="https://sb-open.revenuemonster.my/v3/payment/quickpay", 
                 signType="sha256", 
                 timestamp="1546931187.8109288", 
-                privateKeyDest="/Users/rexlow/Documents/Work/RevenueMonster/RM-API-SDK-Python/rm/private.pem")
+                privateKeyDest="/Users/rexlow/Documents/Work/RevenueMonster/RM-API-SDK-Python/rmsdk/private.pem")
 
 print(signature)

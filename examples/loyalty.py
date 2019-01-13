@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import rm
+from rmsdk import RMSDK
 from configs import configs
 
 give_loyalty_point_payload = {
@@ -11,7 +11,7 @@ give_loyalty_point_payload = {
     "phoneNumber": "172826990"
 }
 
-client = rm.RMSDK(configs=configs)
+client = RMSDK(configs=configs)
 accessToken, loyalty = client.accessToken, client.loyalty
 
 # print(loyalty.giveLoyaltyPoint(accessToken, give_loyalty_point_payload))

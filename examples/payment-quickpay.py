@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import rm
+from rmsdk import RMSDK
 from configs import configs
 
 quickpay_payload = {
@@ -40,7 +40,7 @@ dailySettlementReport_payload = {
 }
 
 # client_credentials
-client = rm.RMSDK(configs=configs)
+client = RMSDK(configs=configs)
 accessToken, pay = client.accessToken, client.quickPay
 
 # print(pay.quickPay(accessToken, quickpay_payload))

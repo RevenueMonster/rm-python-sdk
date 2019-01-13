@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-import rm
+from rmsdk import RMSDK
 from configs import configs
 
 
-client = rm.RMSDK(configs=configs)
+client = RMSDK(configs=configs)
 accessToken, voucher = client.accessToken, client.voucher
 
 # print(voucher.issueVoucher(accessToken, "EhQKCE1lcmNoYW50EJXVzd3wraqTORIYCgxWb3VjaGVyQmF0Y2gQkvnGweaB2uQg"))
