@@ -2,8 +2,11 @@
 
 """Revenue Monster Software Development Kit in Python"""
 
-__version__ = "0.1.2"
-__license__ = 'MIT'
+__author__ = "Rex Low"
+__version__ = "1.0.0"
+__status__ = "Production"
+__license__ = "MIT"
+__maintainer__ = "Rex Low"
 __description__ = "A Python wrapper around the Revenue Monster API"
 
 
