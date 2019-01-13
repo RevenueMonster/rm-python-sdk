@@ -31,7 +31,7 @@ setup(
     name=NAME,
     version=get_version(os.path.join(NAME, '__init__.py')),
     description='A Python wrapper around the Revenue Monster API',
-    long_description=read_file('README.md'),
+    long_description=read_file('README.rst'),
     keywords='RevenueMonster SDK API',
     author='Rex Low',
     author_email='rex@revenuemonster.my',
