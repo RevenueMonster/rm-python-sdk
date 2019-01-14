@@ -1,6 +1,8 @@
 RM-API-SDK-Python
 =================
 
+|image0| |image1| |image2|
+
 This is an Python SDK that maps some of the RESTful methods of Open API
 that are documented at `Revenue Monster Open API
 Documentation <doc.revenuemonster.my>`__.
@@ -123,3 +125,10 @@ Covered Functions
 -  [ ] Send Notification (Merchant)
 -  [ ] Send Notification (Store)
 -  [ ] Send Notification (User)
+
+.. |image0| image:: https://img.shields.io/pypi/pyversions/rmsdk.svg
+   :target: https://pypi.org/project/rmsdk/
+.. |image1| image:: https://img.shields.io/pypi/v/nine.svg
+   :target: https://pypi.org/project/rmsdk/
+.. |image2| image:: https://img.shields.io/pypi/l/rmsdk.svg
+   :target: https://pypi.org/project/rmsdk/

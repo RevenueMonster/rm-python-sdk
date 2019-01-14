@@ -1,5 +1,9 @@
 # RM-API-SDK-Python
 
+[![](https://img.shields.io/pypi/pyversions/rmsdk.svg)](https://pypi.org/project/rmsdk/)
+[![](https://img.shields.io/pypi/v/nine.svg)](https://pypi.org/project/rmsdk/)
+[![](https://img.shields.io/pypi/l/rmsdk.svg)](https://pypi.org/project/rmsdk/)
+
 This is an Python SDK that maps some of the RESTful methods of Open API that are documented at [Revenue Monster Open API Documentation](doc.revenuemonster.my).
 
 ## Getting Started
