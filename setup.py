@@ -24,7 +24,8 @@ def get_version(path):
 NAME = 'rmsdk'
 
 requirements = [
-    'pycryptodome'
+    'pycryptodome',
+    'requests'
 ]
 
 setup(
