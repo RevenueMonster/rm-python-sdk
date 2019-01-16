@@ -3,7 +3,7 @@
 """Revenue Monster Software Development Kit in Python"""
 
 __author__ = "Rex Low"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __status__ = "Production"
 __license__ = "MIT"
 __maintainer__ = "Rex Low"
