@@ -48,8 +48,8 @@ class QuickPay(RMSDKModel):
         response = request.doGet(headers=headers)
         return response
 
-    def getTransactionByOrder(self, accessToken, transactionID):
-        request = Request(environment=self.environment, endpoint="v3/payment/transaction/order/{}".format(transactionID))
+    def getTransactionByOrder(self, accessToken, orderID):
+        request = Request(environment=self.environment, endpoint="v3/payment/transaction/order/{}".format(orderID))
         headers, _ = self.getHeadersAndData(accessToken=accessToken, data=None, requestUrl=request.baseUrl, method="get")
         response = request.doGet(headers=headers)
         return response
