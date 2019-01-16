@@ -65,6 +65,6 @@ class Auth(RMSDKModel):
             "refreshToken": refreshToken
         })
         request = Request(environment=self.environment, auth="oauth", endpoint="v1/token")
-        response = self.request.doPost(self.getHeader(), data=payload)
+        response = request.doPost(self.getHeader(), data=payload)
         self.accessToken, self.refreshToken = response["accessToken"], response["refreshToken"]
         return self.accessToken, self.refreshToken
