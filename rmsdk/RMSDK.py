@@ -8,7 +8,8 @@ from rmsdk import (
     Store,
     Transaction,
     User,
-    Voucher
+    Voucher,
+    EKYC
 )
 
 class RMSDK(object):
@@ -29,3 +30,4 @@ class RMSDK(object):
         self.transaction = Transaction(configs)
         self.user = User(configs)
         self.voucher = Voucher(configs)
+        self.ekyc = EKYC(configs)

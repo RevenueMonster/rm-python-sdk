@@ -36,6 +36,6 @@ signature = generateSignature(
                 requestUrl="https://sb-open.revenuemonster.my/v3/payment/quickpay", 
                 signType="sha256", 
                 timestamp="1546931187.8109288", 
-                privateKeyDest="/Users/rexlow/Documents/Work/RevenueMonster/RM-API-SDK-Python/rmsdk/private.pem")
+                privateKeyDest="/workspace/rm-python-sdk/keys/private_key.pem")
 
 print(signature)
