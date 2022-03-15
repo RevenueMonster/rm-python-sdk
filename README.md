@@ -380,10 +380,8 @@ Detail examples can be found at [examples](https://github.com/RevenueMonster/RM-
 ### Mykad Recognition
 ```python
 mykad_payload = {
-    "request": {
-        "notify_url": "https://aifire.com/ekyc/result",
-        "query_image_content": img_b64.decode('utf-8')
-    }
+    "notify_url": "https://aifire.com/ekyc/result",
+    "query_image_content": img_b64.decode('utf-8')
 }
 results = client.ekyc.mykad_recog(accessToken, mykad_payload)
 ```

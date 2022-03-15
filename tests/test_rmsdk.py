@@ -20,18 +20,13 @@ class TestEKYCSDK(unittest.TestCase):
         img_b64 = self.to_b64(img_url)
         
         mykad_payload = {
-            "request": {
-                "notify_url": "https://aifire.com/ekyc/result",
-                "query_image_content": img_b64.decode('utf-8')
-            }
+            "notify_url": "https://aifire.com/ekyc/result",
+            "query_image_content": img_b64.decode('utf-8')
         }
         
         results = self.client.ekyc.mykad_recog(self.accessToken, mykad_payload)
         get_result_mykad_payload = {
-            "request": {
-                'id': results['item']['requestID']
-                # "id": "62201d48a694817dede84b35"
-            }
+            'id': results['item']['requestID']
         }
 
         mykad_results = self.client.ekyc.get_mykad_results(self.accessToken, get_result_mykad_payload)
@@ -42,10 +37,8 @@ class TestEKYCSDK(unittest.TestCase):
         img_b64 = self.to_b64(face_img_url)
         
         face_verification_payload = {
-            "request": {
-                "query_image_content_1": img_b64.decode('utf-8'),
-                "query_image_content_2": img_b64.decode('utf-8')
-            }
+            "query_image_content_1": img_b64.decode('utf-8'),
+            "query_image_content_2": img_b64.decode('utf-8')
         }
         face_verification_results = self.client.ekyc.face_verification(self.accessToken, face_verification_payload)
         self.assertIn('item', face_verification_results)

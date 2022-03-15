@@ -31,7 +31,7 @@ class EKYC(RMSDKModel):
         """
         request = Request(environment=self.defaults['environment'], endpoint='v3/service')
         self.payload['function'] = 'id-mykad'
-        self.payload.update(data)
+        self.payload['request']  = data
         
         headers, data = self.getHeadersAndData(accessToken=accessToken, data=self.payload, requestUrl=request.baseUrl)
         response = request.doPost(headers=headers, data=data)
@@ -50,7 +50,7 @@ class EKYC(RMSDKModel):
         """
         request = Request(environment=self.defaults['environment'], endpoint='v3/service')
         self.payload['function'] = 'face-compare'
-        self.payload.update(data)
+        self.payload['request']  = data
         
         headers, data = self.getHeadersAndData(accessToken=accessToken, data=self.payload, requestUrl=request.baseUrl)
         
@@ -69,7 +69,7 @@ class EKYC(RMSDKModel):
             dict: Results containing the recognize mykad
         """
         self.payload['function'] = "get-mykad-result"
-        self.payload.update(data)
+        self.payload['request']  = data
         request = Request(environment=self.defaults['environment'], endpoint='v3/service')
         headers, data = self.getHeadersAndData(accessToken=accessToken, data=self.payload, requestUrl=request.baseUrl)
         
@@ -89,7 +89,7 @@ class EKYC(RMSDKModel):
         """
         request = Request(environment=self.defaults['environment'], endpoint='v3/service')
         self.payload['function'] = "get-ekyc-result"
-        self.payload.update(data)
+        self.payload['request']  = data
         headers, data = self.getHeadersAndData(accessToken=accessToken, data=self.payload, requestUrl=request.baseUrl)
         
         response = request.doPost(headers=headers, data=data)
