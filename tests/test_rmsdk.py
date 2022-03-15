@@ -20,9 +20,6 @@ class TestEKYCSDK(unittest.TestCase):
         img_b64 = self.to_b64(img_url)
         
         mykad_payload = {
-            "service": "ekyc",
-            "version": "v1",
-            "function": "id-mykad",
             "request": {
                 "notify_url": "https://aifire.com/ekyc/result",
                 "query_image_content": img_b64.decode('utf-8')
@@ -31,9 +28,6 @@ class TestEKYCSDK(unittest.TestCase):
         
         results = self.client.ekyc.mykad_recog(self.accessToken, mykad_payload)
         get_result_mykad_payload = {
-            "service": "ekyc",
-            "version": "v1",
-            "function": "get-mykad-result",
             "request": {
                 'id': results['item']['requestID']
                 # "id": "62201d48a694817dede84b35"
@@ -48,9 +42,6 @@ class TestEKYCSDK(unittest.TestCase):
         img_b64 = self.to_b64(face_img_url)
         
         face_verification_payload = {
-            "service": "ekyc",
-            "version": "v1",
-            "function": "face-compare",
             "request": {
                 "query_image_content_1": img_b64.decode('utf-8'),
                 "query_image_content_2": img_b64.decode('utf-8')

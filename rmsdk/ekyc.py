@@ -1,6 +1,4 @@
-from email import header
-from aiohttp import request
-from funcsigs import signature
+import json
 from .model import RMSDKModel
 from .request import Request
 
@@ -15,6 +13,11 @@ class EKYC(RMSDKModel):
         for (param, default) in self.defaults.items():
             setattr(self, param, configs.get(param, default))
             
+        self.payload = {
+            "service": "ekyc",
+            "version": "v1",
+        }
+            
     def mykad_recog(self, accessToken: str, data: dict) -> dict:
         """
         Function to make http request to get recognize mykad
@@ -27,8 +30,10 @@ class EKYC(RMSDKModel):
             dict: dict containing only id for mykad recog result (require to parse the results via different route)
         """
         request = Request(environment=self.defaults['environment'], endpoint='v3/service')
-        headers, data = self.getHeadersAndData(accessToken=accessToken, data=data, requestUrl=request.baseUrl)
+        self.payload['function'] = 'id-mykad'
+        self.payload.update(data)
         
+        headers, data = self.getHeadersAndData(accessToken=accessToken, data=self.payload, requestUrl=request.baseUrl)
         response = request.doPost(headers=headers, data=data)
         return response
     
@@ -44,7 +49,10 @@ class EKYC(RMSDKModel):
             dict: Results if the two faces are similar or not 
         """
         request = Request(environment=self.defaults['environment'], endpoint='v3/service')
-        headers, data = self.getHeadersAndData(accessToken=accessToken, data=data, requestUrl=request.baseUrl)
+        self.payload['function'] = 'face-compare'
+        self.payload.update(data)
+        
+        headers, data = self.getHeadersAndData(accessToken=accessToken, data=self.payload, requestUrl=request.baseUrl)
         
         response = request.doPost(headers=headers, data=data)
         return response
@@ -60,8 +68,10 @@ class EKYC(RMSDKModel):
         returns:
             dict: Results containing the recognize mykad
         """
+        self.payload['function'] = "get-mykad-result"
+        self.payload.update(data)
         request = Request(environment=self.defaults['environment'], endpoint='v3/service')
-        headers, data = self.getHeadersAndData(accessToken=accessToken, data=data, requestUrl=request.baseUrl)
+        headers, data = self.getHeadersAndData(accessToken=accessToken, data=self.payload, requestUrl=request.baseUrl)
         
         response = request.doPost(headers=headers, data=data)
         return response
@@ -78,7 +88,9 @@ class EKYC(RMSDKModel):
             dict: Results containing the end to end including face and mykad results
         """
         request = Request(environment=self.defaults['environment'], endpoint='v3/service')
-        headers, data = self.getHeadersAndData(accessToken=accessToken, data=data, requestUrl=request.baseUrl)
+        self.payload['function'] = "get-ekyc-result"
+        self.payload.update(data)
+        headers, data = self.getHeadersAndData(accessToken=accessToken, data=self.payload, requestUrl=request.baseUrl)
         
         response = request.doPost(headers=headers, data=data)
         return response
