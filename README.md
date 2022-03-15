@@ -59,6 +59,11 @@ Before using the SDK, users must obtain credentials from merchant portal first. 
   * [Get Voucher By Code](#get-voucher-by-code)
   * [Get Voucher Batches](#get-voucher-batches)
   * [Get Voucher Batches By Batch Key](#get-voucher-batches-by-batch-key)
+* EKYC
+  * [Mykad Recognition](#mykad-recognition)
+  * [GET Mykad Result](#get-mykad-result)
+  * [GET EKYC Result](#get-ekyc-result)
+  * [Face Verification](#face-verification)
  
 ## Usage
 
@@ -370,3 +375,24 @@ result = client.voucher.getVoucherBatchByKey(accessToken, batchKey)
 
 Detail examples can be found at [examples](https://github.com/RevenueMonster/RM-API-SDK-Python/tree/master/examples).
 
+## EKYC
+
+### Mykad Recognition
+```python
+results = client.ekyc.mykad_recog(accessToken, mykad_payload)
+```
+
+### GET Mykad Result
+```python
+mykad_results = client.ekyc.get_mykad_results(accessToken, get_result_mykad_payload)
+```
+
+### GET EKYC Result
+```python
+ekyc_results = client.ekyc.get_ekyc_results(accessToken, ekyc_payload)
+```
+
+### Face Verification
+```python
+face_verification_results = client.ekyc.face_verification(accessToken, face_verification_payload)
+```
