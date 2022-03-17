@@ -108,7 +108,7 @@ class RMSDKModel(object):
 
     def getHeadersAndData(self, accessToken, requestUrl, method="post", data=None):
         nonceStr = getNonce()
-        timestamp = str(time())
+        timestamp = str(int(time()))
 
         if data is not None:
             data = json.dumps(orderDict(data), separators=(',', ':'))

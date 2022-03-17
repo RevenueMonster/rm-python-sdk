@@ -18,4 +18,5 @@ from .store import Store
 from .payment import QuickPay, Transaction
 from .loyalty import Loyalty
 from .voucher import Voucher
+from .ekyc import EKYC
 from .RMSDK import RMSDK

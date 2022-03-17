@@ -2,7 +2,7 @@
 
 configs = {
     "environment": "sandbox",
-    "clientID": "1546849785427621041",
-    "clientSecret": "eNdqiTKWjbbJoSIaPEEvzGPBYrXMTWQZ",
-    "privateKey": "/Users/rexlow/Documents/Work/RevenueMonster/RM-API-SDK-Python/rmsdk/private.pem"
+    "clientID": "1604635236745642069",
+    "clientSecret": "TPSTBChxwEduyMdcSAzcxlhZXWNRCEJj",
+    "privateKey": "/workspace/rm-python-sdk/keys/private_key.pem"
 }
